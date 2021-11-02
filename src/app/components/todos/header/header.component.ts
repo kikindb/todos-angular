@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Todo } from 'src/app/models/todo.model';
 
 @Component({
@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   inputTodo: string = "";
   @Output() todoCreated = new EventEmitter<Todo>();
   todosList: Array<any> = [];
+  @ViewChild('myInput', { static: true }) myInput: any;
 
   constructor() { }
 
@@ -20,10 +21,15 @@ export class HeaderComponent implements OnInit {
   addTodo(event: Event): void {
     this.todoCreated.emit(new Todo(this.generateId(), this.inputTodo, false));
     this.clearInput();
+    this.focusInput();
   }
 
   clearInput(): void {
     this.inputTodo = "";
+  }
+
+  focusInput(): void {
+    this.myInput.nativeElement.focus();
   }
 
   generateId(): string {
