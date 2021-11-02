@@ -1,0 +1,11 @@
+<header>
+  <h1>Todos App Angular</h1>
+  <section class="todo-input-container">
+    <div class="input-group mb-3">
+      <input #myInput type="text" class="form-control" placeholder="Type a new todo" aria-label="Type a new todo"
+        aria-describedby="button-addon2" [(ngModel)]="inputTodo" autofocus>
+      <button class="btn btn-primary" (click)="addTodo($event)" type="button" id="button-addon2"
+        [disabled]="inputTodo === ''">Add Todo</button>
+    </div>
+  </section>
+</header>

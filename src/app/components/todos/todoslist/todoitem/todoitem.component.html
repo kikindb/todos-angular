@@ -1,0 +1,4 @@
+<label class="list-group-item" [ngClass]="todo.isCompleted ? 'checked' : ''">
+  <input class="form-check-input me-1" type="checkbox" [(ngModel)]="todo.isCompleted" [checked]="todo.isCompleted">
+  {{todo.description}}
+</label>

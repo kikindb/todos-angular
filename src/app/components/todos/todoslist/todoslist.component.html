@@ -1,0 +1,6 @@
+<section>
+  <div class="list-group">
+    <app-todoitem *ngFor="let todo of todosList" [todo]="todo"></app-todoitem>
+  </div>
+  <p *ngIf="todosList.length <= 0">Start adding tasks</p>
+</section>

@@ -1,0 +1,7 @@
+.list-group > label {
+  cursor: pointer;
+}
+
+.list-group > label:hover {
+  background-color: #ececec;
+}
