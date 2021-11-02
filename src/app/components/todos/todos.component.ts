@@ -19,8 +19,4 @@ export default class TodosComponent implements OnInit {
     this.todosList.push(todo);
     console.log(this.todosList);
   }
-
-  onTodoCompleted(todo: Todo) {
-    this.todosList.push(todo);
-  }
 }
